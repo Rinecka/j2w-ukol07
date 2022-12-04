@@ -1,3 +1,4 @@
+[#ftl]
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -7,6 +8,13 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-    <h1>Tady bude můj blog…</h1>
+<h1>Vybraný post z blogu:</h1>
+<h2>${vybranyPost.title}</h2>
+<p>${vybranyPost.slug}</p>
+<p>${vybranyPost.perex}</p>
+<p>${vybranyPost.body}</p>
+<p>Autor: ${vybranyPost.author}</p>
+
+
 </body>
 </html>
