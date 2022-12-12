@@ -11,17 +11,19 @@
 <body>
 <h1>Na tomto blogu najdete tyto posty</h1>
 
-
-[#list seznam as post]
-
-    <a href="/post/${post.slug?no_esc}"> ${post.title}</a> <br>
-    <p>${post.slug} </p>
-    <p>${post.perex} </p>
-    <p>${post.body} </p>
-    <p>Autor:${post.author}</p>
-
-
-[/#list]
-
+<ul>
+    [#list seznam.content as vybranyPost]
+        <li>
+            <a href="/post/${vybranyPost.slug?no_esc}"> ${vybranyPost.title}</a>
+            <br>
+            <p>${vybranyPost.published?date?string} </p>
+            <p>${vybranyPost.slug} </p>
+            <p>${vybranyPost.perex} </p>
+            <p>${vybranyPost.body} </p>
+            <p>Autor:${vybranyPost.author}</p>
+        </li>
+        <br>
+    [/#list]
+</ul>
 </body>
 </html>

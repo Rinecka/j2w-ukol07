@@ -3,16 +3,24 @@ package cz.czechitas.java2webapps.ukol7.controller;
 import cz.czechitas.java2webapps.ukol7.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.data.domain.Pageable;
 
+@Controller
 public class PostController {
 
-    @Autowired
+
     private PostService postService;
+
+    @Autowired
+    public PostController(PostService postService) {
+        this.postService = postService;
+
+    }
 
     @GetMapping("/")
     public ModelAndView seznamPostu(@PageableDefault(sort = {"id"}, size = 20) Pageable pageable) {

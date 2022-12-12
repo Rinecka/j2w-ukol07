@@ -7,8 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalDate;
+
 
 @Service
 public class PostService {
@@ -21,7 +21,7 @@ public class PostService {
     }
 
     public Page<Post> seznamPostu(Pageable pageable) {
-        return postRepository.findByPublishedBeforeOrderByPublishedDesc(LocalDateTime.now(), pageable);
+        return postRepository.findByPublishedBeforeOrderByPublishedDesc(LocalDate.now(), pageable);
     }
 
     public Post singlePost(String slug) {

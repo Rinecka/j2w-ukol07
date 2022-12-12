@@ -14,6 +14,7 @@
 <p>${vybranyPost.perex}</p>
 <p>${vybranyPost.body}</p>
 <p>Autor: ${vybranyPost.author}</p>
+<p>${vybranyPost.published?date?string} </p>
 
 
 </body>
